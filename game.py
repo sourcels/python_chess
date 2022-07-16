@@ -3,9 +3,10 @@ import os
 
 window = display.set_mode((800, 600))
 display.set_caption('Chess')
-background = transform.scale(image.load(os.path.join("assets", "ui", "background.jpg")), (800, 600))
+background = transform.scale(image.load(r"python_chess\\assets\\ui\\background.jpg"), (800, 600))
 clock = time.Clock()
 FPS = 60
+game = True
 #mixer.init()
 #mixer.music.load('music.ogg')
 #mixer.music.play()
@@ -28,7 +29,7 @@ class Figure(gamespr):
         if keys[K_s] and self.rect.y <= 300:
             self.rect.y += self.speed
 
-figure = Figure('assets/figures/black_pawn.png', 20, 197, 26, 100)
+figure = Figure(r"python_chess\\assets\\figures\\black_pawn.png", 20, 197, 26, 100)
 while game:
     window.blit(background,(0,0))
     for event in event.get():
